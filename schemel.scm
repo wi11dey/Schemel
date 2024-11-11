@@ -11,4 +11,4 @@
 	(- (define (func arg ...) body1 ... body2))
 	(+ (defun func (arg ...) body))))
 
-(define-language r6rs-)
+(define-language r6rs-cps)

@@ -15,6 +15,10 @@
 
 ;;; Code:
 
+(defun schemel-funcall-cps (f)
+  (let (result)
+    (while ())))
+
 (provide 'schemel)
 
 ;;; schem.el ends here
