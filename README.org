@@ -1,0 +1,24 @@
+#+title:Schem.el
+
+#+begin_quote
+Ein Schemel (über althochdeutsch [fuoʒ]scamil aus spätlateinisch scamillus „Bänkchen“ zu lateinisch scamnum „Bank“) oder Hocker ist ein einfaches Sitzmöbel ohne Lehne. Durch das Fehlen von Arm- und Rückenlehne unterscheidet sich der Schemel von einem Stuhl.
+
+--- [[https://de.wikipedia.org/wiki/Schemel]]
+#+end_quote
+
+Schem.el is a a stepping-stool allowing Emacs to run and Edebug R^{5,6,7}RS Scheme natively. Interop between Elisp and Scheme is seamless: you can even write
+
+* How it works
+
+Schem.el is a nanopass [cite:Keep and Dybvig] transpiler from R^{5,7}RS Schme to Elisp, together with ~psyntax~ [cite:Ghuloum and Dybvig]. The transpiler is then bootstrapped by transpiling itself to Elisp, using Guile as the primordial R^{6}RS Scheme implementation, after which Emacs can transpile (and optionally, byte- and native-compile) all Scheme.
+
+The bootstrap proceeds by the following [[https://en.wikipedia.org/wiki/Tombstone_diagram][Tombstone diagram]]:
+
+[[./bootstrap.svg]]
+
+~call/cc~ is fully supported, as all Scheme code first transformed to [[https://en.wikipedia.org/wiki/Continuation-passing_style][CPS]]. Tail-call optimization and first-class continuations are implemented by each Schemel procedure returning ~values~ and the next continuation, which is executed iteratively by the Schemel Elisp runtime using only a constant amount of stack space. This makes Schemel strictly more powerful than Elisp itself.
+
+* References
+
+1. Keep, Andrew W., and R. Kent Dybvig. “A nanopass framework for commercial compiler development.” Proceedings of the 18th ACM SIGPLAN international conference on Functional programming. 2013.
+2. Abdulaziz Ghuloum and R. Kent Dybvig. Portable syntax-case URL http://www.cs.indiana.edu/chezscheme/syntax-case/
