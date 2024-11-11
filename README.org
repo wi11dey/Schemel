@@ -18,7 +18,7 @@ The bootstrap proceeds by the following [[https://en.wikipedia.org/wiki/Tombston
 
 ~call/cc~ is fully supported, as all Scheme code first transformed to [[https://en.wikipedia.org/wiki/Continuation-passing_style][CPS]]. Tail-call optimization and first-class continuations are implemented by each Schemel procedure returning ~values~ and the next continuation, which is executed iteratively by the Schemel Elisp runtime using only a constant amount of stack space. This makes Schemel strictly more powerful than Elisp itself.
 
-[[https://github.com/wi11dey/Schemel/blob/main/schem.el][schem.el]] consists of the Schemel Elsip runtime, while schemel.scm.el is the transpiled transpiler, used by the runtime for Scheme ~eval~.
+[[https://github.com/wi11dey/Schemel/blob/main/schem.el][schem.el]] consists of the Schemel Elisp runtime, while [[https://github.com/wi11dey/Schemel/blob/main/schemel.scm.el][schemel.scm.el]] is the transpiled transpiler, used by the runtime for Scheme ~eval~.
 
 * References
 
