@@ -6,7 +6,7 @@ Ein Schemel (über althochdeutsch [fuoʒ]scamil aus spätlateinisch scamillus �
 --- [[https://de.wikipedia.org/wiki/Schemel]]
 #+end_quote
 
-Schem.el is a a stepping-stool allowing Emacs to run and Edebug R^{5,6,7}RS Scheme natively. Interop between Elisp and Scheme is seamless: you can even write
+Schem.el is a a stepping-stool allowing Emacs to run and Edebug R^{5,6,7}RS Scheme natively. Interop between Elisp and Scheme is seamless: you can even write Emacs customizations and ~interactive~ commands in Scheme.
 
 * How it works
 
