@@ -17,7 +17,7 @@
 
 (require 'cl-lib)
 
-(defun schemel-funcall-cps (f &rest values)
+(defun schemel-funcall (f &rest values)
   (cl-loop with continuation = (lambda (value) (cl-return value))
            for (continuation . values) = (apply f continuation values)))
 
