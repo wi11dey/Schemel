@@ -1,4 +1,4 @@
-;;; schem.el --- R6RS Scheme to Elisp compiler -*- lexical-binding: t -*-
+;;; schem.el --- R5,6,7RS Scheme to Elisp compiler -*- lexical-binding: t -*-
 
 ;; Author: Will Dey
 ;; Maintainer: Will Dey
@@ -18,6 +18,7 @@
 (require 'cl-lib)
 
 (defun schemel-funcall (f &rest values)
+  ;; The entire Schemel Elisp runtime:
   (cl-loop with continuation = (lambda (value) (cl-return value))
            for (continuation . values) = (apply f continuation values)))
 
